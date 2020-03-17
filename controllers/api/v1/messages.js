@@ -48,8 +48,8 @@ const getMessageById = (req, res) => {
 
 const createMessage = (req, res) => {
     let message = new Message();
-    message.text = req.body.text;
-    message.user = req.body.user;
+    message.text = req.body.message.text;
+    message.user = req.body.message.user;
 
     message.save((err, doc) => {
         if (err) {
@@ -95,8 +95,8 @@ const updateMessage = (req, res) => {
             });
         }
         if (!err) {
-            doc.text = req.body.text;
-            doc.user = req.body.user;
+            doc.text = req.body.message.text;
+            doc.user = req.body.message.user;
             doc.save((err, doc) => {
                 if (err) {
                     res.json({
