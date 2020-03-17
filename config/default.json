@@ -1,0 +1,8 @@
+{
+    "Database":{
+        "conn": "mongodb+srv://chatbotnodejs:Fjrp5KNZWuDctRmA@cluster0-ooglv.mongodb.net/test?retryWrites=true&w=majority"
+    },
+    "jwt": {
+        "secret": "MySecretWord"
+    }
+}
