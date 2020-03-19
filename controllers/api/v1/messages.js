@@ -47,6 +47,11 @@ const getMessageById = (req, res) => {
 }
 
 const createMessage = (req, res) => {
+    if(!req.body.message){
+        res.json({
+            message:"Please provide request body to create message"
+        });
+    }
     let message = new Message();
     message.text = req.body.message.text;
     message.user = req.body.message.user;
@@ -95,6 +100,11 @@ const updateMessage = (req, res) => {
             });
         }
         if (!err) {
+            if(!req.body.message){
+                res.json({
+                    message:"Please provide request body to update message"
+                });
+            }
             doc.text = req.body.message.text;
             doc.user = req.body.message.user;
             doc.save((err, doc) => {
