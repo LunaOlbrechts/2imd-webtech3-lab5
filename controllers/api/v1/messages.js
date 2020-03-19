@@ -51,6 +51,8 @@ const createMessage = (req, res) => {
         res.json({
             message:"Please provide request body to create message"
         });
+
+        return;
     }
     let message = new Message();
     message.text = req.body.message.text;
@@ -104,6 +106,7 @@ const updateMessage = (req, res) => {
                 res.json({
                     message:"Please provide request body to update message"
                 });
+                return ;
             }
             doc.text = req.body.message.text;
             doc.user = req.body.message.user;
